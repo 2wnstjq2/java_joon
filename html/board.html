@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>news paper</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            width: 800px;
+            margin: 20px auto;
+            border: 1px solid;
+        }
+
+        span {
+            float: left;
+        }
+
+        #go>li {
+            float: left;
+        }
+
+        li {
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            list-style: none;
+            border: thin solid;
+        }
+
+    /*header*/
+        header{
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #top {
+            position: absolute;
+            width: 300px;
+            height: 40px;
+            right: 0px;
+        }
+        
+        #middle {
+            position: absolute;
+            width: 300px;
+            height: 40px;
+            right: 0px;
+            bottom: 0px;
+
+        }
+
+
+        #go {
+            position: absolute;
+            right: 0;
+        }
+
+        /*main*/
+        #main {
+            overflow: hidden;
+        }
+
+        #all {
+            width: 600px;
+            float: left;
+        }
+
+        article {
+            border: 1px solid;
+        }
+
+        aside {
+            float: right;
+        }
+
+        /*footer*/
+        footer {
+            text-align: center;
+            border-top: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <span style="font-size: 1.5em">
+            <h2>merry crismass~</h2>
+            <h3>welcome santa!</h3>
+        </span>
+
+        <div id="top">
+            <ul id="go">
+                <li>web</li>
+                <li>mobile</li>
+                <li>simulation</li>
+            </ul>
+        </div>
+        <div id="middle">
+            <ul id="go">
+                <li>santa</li>
+                <li>rudolf</li>
+                <li>present</li>
+            </ul>
+        </div>
+    </header>
+
+    <!--main-->
+    <div id="main">
+        <div id="all">
+            <article id="1">
+                <h4>events</h4>
+                <p>All dropdown events are fired at the .dropdown-menu’s parent element and have a relatedTarget property, whose value is the toggling anchor element. hide.bs.dropdown and hidden.bs.dropdown events have a clickEvent property (only when the original event type is click) that contains an Event Object for the click event.</p>
+            </article>
+            <article id="2">
+                <h4>events</h4>
+                <p>All dropdown events are fired at the .dropdown-menu’s parent element and have a relatedTarget property, whose value is the toggling anchor element. hide.bs.dropdown and hidden.bs.dropdown events have a clickEvent property (only when the original event type is click) that contains an Event Object for the click event.</p>
+            </article>
+            <article id="3">
+                <h4>events</h4>
+                <p>All dropdown events are fired at the .dropdown-menu’s parent element and have a relatedTarget property, whose value is the toggling anchor element. hide.bs.dropdown and hidden.bs.dropdown events have a clickEvent property (only when the original event type is click) that contains an Event Object for the click event.</p>
+            </article>
+        </div>
+
+        <aside>
+            <ul>
+                <li>santa</li>
+                <li>rudolf</li>
+                <li>present</li>
+            </ul>
+        </aside>
+    </div>
+
+    <!--footer-->
+    <footer>
+        web+mobile bank
+    </footer>
+
+</body></html>
+    
