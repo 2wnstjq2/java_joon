@@ -17,10 +17,11 @@
 
         span {
             float: left;
+            margin-left: 10px;
         }
 
-        #go>li {
-            float: left;
+        .go>ul>li {
+            float: left;            
         }
 
         li {
@@ -31,31 +32,18 @@
             border: thin solid;
         }
 
-    /*header*/
-        header{
+        /*header*/
+        header {
             height: 100px;
             overflow: hidden;
             position: relative;
         }
 
-        #top {
-            position: absolute;
-            width: 300px;
-            height: 40px;
-            right: 0px;
-        }
-        
         #middle {
-            position: absolute;
-            width: 300px;
-            height: 40px;
-            right: 0px;
-            bottom: 0px;
-
+            bottom: 10px;
         }
 
-
-        #go {
+        .go {
             position: absolute;
             right: 0;
         }
@@ -66,7 +54,8 @@
         }
 
         #all {
-            width: 600px;
+            width: 600px;            
+            margin: 10px;
             float: left;
         }
 
@@ -84,7 +73,8 @@
             border-top: 1px solid;
         }
     </style>
-</head>
+        
+    </head>
 
 <body>
     <!--header-->
@@ -94,15 +84,15 @@
             <h3>welcome santa!</h3>
         </span>
 
-        <div id="top">
-            <ul id="go">
+        <div id="top" class="go">
+            <ul>
                 <li>web</li>
                 <li>mobile</li>
                 <li>simulation</li>
             </ul>
         </div>
-        <div id="middle">
-            <ul id="go">
+        <div id="middle" class="go">
+            <ul>
                 <li>santa</li>
                 <li>rudolf</li>
                 <li>present</li>
@@ -127,6 +117,7 @@
             </article>
         </div>
 
+
         <aside>
             <ul>
                 <li>santa</li>
@@ -141,5 +132,14 @@
         web+mobile bank
     </footer>
 
-</body></html>
+</body>
+
+</html>
     
+
+
+
+
+
+
+
