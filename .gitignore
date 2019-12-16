@@ -3,6 +3,7 @@
 # Edit at https://www.gitignore.io/?templates=web,java,windows,eclipse
 
 ### Eclipse ###
+.Servers
 .metadata
 bin/
 tmp/
@@ -100,11 +101,11 @@ hs_err_pid*
 *.asp
 *.cer
 *.csr
-*.css
+# *.css
 *.htm
 #*.html
-*.js
-*.jsp
+# *.js
+# *.jsp
 *.php
 *.rss
 *.wasm
