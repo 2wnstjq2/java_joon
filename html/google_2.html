@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+	integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+	crossorigin="anonymous"></script>
+<style>
+#info, #logout {
+	display: none;
+}
+</style>
+</head>
+<body>
+
+	<a href="google_2.html">other page</a>
+
+	<a href="javascript:signInGoogle();" id="login">login</a>
+	<a href="javascript:userInfoGoogle();" id="info">info</a>
+	<a href="javascript:signOutGoogle();" id="logout">logout</a>
+
+	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script> -->
+
+	<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCH7LKDl7JTKRAMNhsyWS4r8V5a9_lXWvs",
+    authDomain: "kite-jun.firebaseapp.com",
+    databaseURL: "https://kite-jun.firebaseio.com",
+    projectId: "kite-jun",
+    storageBucket: "kite-jun.appspot.com",
+    messagingSenderId: "399123370037",
+    appId: "1:399123370037:web:e5648896b587649fe3617c",
+    measurementId: "G-YE8YWG7YG9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  //google
+  var provider = new firebase.auth.GoogleAuthProvider();
+ 
+  
+  //사용자의 로그인여부 확인 : 사용자 정보를 출력
+  function userInfoGoogle(){
+	  
+	  firebase.auth().onAuthStateChanged(function(user) {
+		  if (user) {
+		    // User is signed in.
+		    var displayName = user.displayName;
+		    var email = user.email;
+		    var emailVerified = user.emailVerified;
+		    var photoURL = user.photoURL;
+		    var isAnonymous = user.isAnonymous;
+		    var uid = user.uid;
+		    var providerData = user.providerData;
+		    
+		    alert(displayName+' '+email);
+		    
+		    // ...
+		  } else {
+		    alert('need login');
+		    /* location.href='google_html'; */
+		  }
+	  });
+  
+  
+  }
+  
+  
+  
+  //logout
+  function signOutGoogle(){
+	  //firebase.auth().signOut();
+	  firebase.auth().signOut().then(function() {
+		  // Sign-out successful.
+		  
+		  $('#login').css('display', 'block');
+		  $('#logout').css('display', 'none');
+		  $('#info').css('display', 'none');
+		  
+		  alert('Bye~');
+		  
+		}).catch(function(error) {
+		  // An error happened.
+		});
+	  
+  }
+  
+  //login
+  function signInGoogle(){
+	  
+	  firebase.auth().signInWithPopup(provider).then(function(result) {
+		  // This gives you a Google Access Token. 
+		  // You can use it to access the Google API.
+		  var token = result.credential.accessToken;
+		  // The signed-in user info.
+		  var user = result.user;
+		  
+		  $('#logout').css('display', 'block');
+		  $('#login').css('display', 'none');
+		  
+		  $(document).ready(function(){
+				userInfoGoogle();
+			});
+		  // ...
+		}).catch(function(error) {
+		  // Handle Errors here.
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  // The email of the user's account used.
+		  var email = error.email;
+		  // The firebase.auth.AuthCredential type that was used.
+		  var credential = error.credential;
+		  // ...
+		});
+	  
+	 
+	  
+  }
+  
+
+  	</script>
+
+</body>
+</html>
