@@ -14,22 +14,6 @@ Firebase은 다듬으면 됨
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-controller
-
-1 request
-2 분석
-3 처리
-4 응답선택(for..., in...)
-
-
-
-confirm()
-확인/취소
-
-</> JS
-
-
-
 
 자바스크립트3 
 44p
@@ -51,8 +35,6 @@ kite test1111
 2. 생성된 문서객체에 이벤트 등록
       함수->문서객체 컨트롤
 
-엘리먼트 = 테그 <>
-
 
 cookie : data저장공간
 scope = 페이지영역
@@ -66,8 +48,6 @@ scope = 페이지영역
 servlets( Mappings)
 ->java 웹서비스, java코드
 
-welcome pages
-->시작페이지
 
 utf-8
 
@@ -88,8 +68,6 @@ web-inf => 사용자들에게 보이지 않지만 돌아감
 자바 웹개발
 spring + ajax
 
------
-java_joon 깃주소
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
