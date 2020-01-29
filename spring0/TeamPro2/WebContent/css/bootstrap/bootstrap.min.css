@@ -401,6 +401,10 @@ template {
 	line-height: 1.2
 }
 
+.tier{
+	float : right;
+}
+
 hr {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
@@ -526,11 +530,15 @@ pre code {
 }
 
 .container {
-	width: 100%;
+	width: 100%;	
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
-	margin-left: auto
+	margin-left: auto;
+}
+
+.house{
+	width: 55%;	
 }
 
 @media ( min-width :576px) {
