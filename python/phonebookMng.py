@@ -6,10 +6,8 @@
 # 친구의 정보 저장할 리스트
 pBooks = []
 
-# cnt = 0
-
 def insertmember():
-    # global cnt
+    
     name = input('이름을 입력해 주세요')
     pNum = input('전화번호를 입력해 주세요')
     bDay = input('생일을 입력해 주세요')
@@ -20,7 +18,7 @@ def insertmember():
         'birthday' : bDay        
     }
     pBooks.append(member)
-    # cnt+=1
+    
 
 
 def showlist():
