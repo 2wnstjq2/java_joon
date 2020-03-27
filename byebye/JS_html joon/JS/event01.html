@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>이벤트 오토 실행</title>
+     <script>
+     window.onload = function(){
+         
+     var ButtonA = document.getElementById('button-a');
+     var ButtonB = document.getElementById('button-b');
+     var countA = document.getElementById('count-a');
+     var countB = document.getElementById('count-b');
+         
+         ButtonA.onclick = function(){
+             countA.innerHTML = Number(countA.innerHTML)+1;
+         };
+         ButtonB.onclick = function(){
+             countB.innerHTML = Number(countB.innerHTML)+1;
+            countA.innerHTML = Number(countA.innerHTML)+1;
+             ButtonA.onclick();
+         };
+     };
+    </script>
+</head>
+
+<body> 
+    
+    <button id = "button-a">ButtonA</button>
+    <button id = "button-b">ButtonB</button>
+    <h1>버튼a -<span id="count-a">0</span></h1>
+    <h1>버튼b -<span id="count-b">0</span></h1>
+    
+    </body>
+
+</html>

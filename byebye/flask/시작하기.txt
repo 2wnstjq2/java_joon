@@ -1,0 +1,15 @@
+[Project Name]
+
+└ [app]
+
+      └ [static]
+
+            └ 자바스크립트, CSS, 이미지 등...
+
+      └ [templates]
+
+            └ HTML 파일들(폴더별로 정리 가능)
+
+└ config.py
+
+└ run.py

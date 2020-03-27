@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+
+<!--
+1.등록했을때 배열에 추가하기
+    a.배열생성
+    b.데이터 기입
+2.수정을 누르면 스크립트가 뜨게 하기
+    수정을 누르면 haha가 뜨게 해둠
+3.삭제
+-->
+
+
+
+<html>
+
+<head>
+    <title>sign up</title>
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <script>
+        var reEdit = '';
+        
+
+        /*function(#setLi) {
+            var ta1 = [];
+
+            for (var i = 0; i < ta1.length; i++) {
+                ta1[i] = ''
+
+            }
+
+        }*/
+
+    </script>
+    <style>
+        body {
+            width: 800px;
+            margin: 10px auto;
+
+        }
+
+        .sli {
+            border-collapse: collapse;
+
+        }
+
+        .sli td {
+            border: thin solid;
+            width: 160px;
+            height: 40px;
+            text-align: center;
+        }
+
+        
+
+        h4 {
+            border-top: 2px solid;
+            border-top-color: aquamarine;
+            padding-top: 10px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Member Manager</h1>
+
+    <h4>회원등록</h4>
+    <table>
+        <tr>
+            <td>아이디(이메일)</td>
+            <td>비밀번호</td>
+            <td>이름</td>
+            <th rowspan="2"><input type=submit id="setLi" value="등록"></th>
+        </tr>
+        <tr>
+            <td><input type=text></td>
+            <td><input type=password></td>
+            <td><input type=text></td>
+        </tr>
+    </table>
+
+    <h4>회원리스트</h4>
+    <table class="sli">
+        <tr>
+            <td>index</td>
+            <td>아이디(이메일)</td>
+            <td>비밀번호</td>
+            <td>이름</td>
+            <td>관리</td>
+        </tr>
+
+
+        <tr>
+            <td id="ind"></td>
+            <td id="eid"></td>
+            <td id="pw"></td>
+            <td id="ename"></td>
+            <td><a href="#edit">수정</a><a> 삭제</a></td>
+        </tr>
+
+
+    </table>
+
+    
+</body>
+
+</html>

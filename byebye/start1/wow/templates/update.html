@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function chkData() {
+    //alert("aa");
+    if(frm.code.value == "" ||
+        frm.sang.value == "" ||
+        frm.su.value == "" ||
+        frm.dan.value == ""){
+        alert("입력자료를 모두 채우시오");
+        return;
+    }
+    frm.submit();
+}
+
+</script>
+</head>
+<body>
+<h2>* 자료 수정 * </h2>
+<form name="frm" action="/jun/updateok" method="post">{% csrf_token %}
+<input type="hidden" name="id" value="{{sang_one.id}}">
+<table border="1">
+    <tr>
+        <td>코드 : </td>
+        <td><input type="text" name="code" value="{{sang_one.code}}"></td>
+    </tr>
+    <tr>
+        <td>품명 : </td>
+        <td><input type="text" name="sang" value="{{sang_one.sang}}"></td>
+    </tr>
+    <tr>
+        <td>수량 : </td>
+        <td><input type="text" name="su" value="{{sang_one.su}}"></td>
+    </tr>        
+    <tr>
+        <td>단가 : </td>
+        <td><input type="text" name="dan" value="{{sang_one.dan}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="button" value="수정하기" onclick="chkData()">
+            <input type="button" value="수정취소" onclick="history.back()">
+    </tr>    
+</table>
+</form>
+</body>
+</html>

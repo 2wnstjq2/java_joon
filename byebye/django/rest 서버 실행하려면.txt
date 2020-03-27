@@ -1,0 +1,93 @@
+py -3 -m venv env
+//환경파일
+
+<in win10>
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -> Y
+.\activate // env/Scripts/activate
+</env 연결완료>
+
+py -3 manage.py runserver //서버 play
+
+<
+py -3 manage.py makemigrations
+py -3 manage.py migrate
+모델이 변경될 때마다 위의 명령어를 실행
+>
+
+
+1.django-admin startproject 프로젝트명
+
+2.py -3 manage.py startapp 앱명
+
+3. settings.py > INSTALLED_APPS 안에 <'catalog.apps.ㅇㅇㅇㅇConfig',> 추가 -->카탈로그 어플리케이션등록
+
+-LANGUAGE_CODE = 'ko-kr' -> 한글... 굳이?
+ -time-zone : 'Asia/Seoul'
+
+>>py manage.py migrate
+
+4. 프로젝트명.urls.py 안에 //
+from django.contrib import admin
+from django.conf.urls import include
+from django.urls import path
+from django.views.generic import RedirectView
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('catalog/', include('catalog.urls')),
+    path('', RedirectView.as_view(url='/catalog/', permanent=True)),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)//
+추가
+
+5.카탈로그.urls.py안에 //
+from django.urls import path
+from catalog import views
+
+urlpatterns = [
+]//
+추가
+
+<<https://developer.mozilla.org/ko/docs/Learn/Server-side/Django>>
+-튜토리얼 3 모델정의하기
+-튜토리얼 4 모델이용하기 - 등록
+지금은 스킵
+
+-튜토리얼 5 홈페이지(css)만들기
+
+6./catalog/urls.py에 <path('', views.index, name='index'),> 추가
+
+ -<a href="{% url 'index' %}">Home</a>. ->홈으로가는 버튼
+
+7.catalog/views.py 에
+//
+from catalog.models import Book, Author, BookInstance, Genre
+
+def index(request):
+    """View function for home page of site."""
+
+    # Generate counts of some of the main objects
+    num_books = Book.objects.all().count()
+    num_instances = BookInstance.objects.all().count()
+    
+    # Available books (status = 'a')
+    num_instances_available = BookInstance.objects.filter(status__exact='a').count()
+    
+    # The 'all()' is implied by default.    
+    num_authors = Author.objects.count()
+    
+    context = {
+        'num_books': num_books,
+        'num_instances': num_instances,
+        'num_instances_available': num_instances_available,
+        'num_authors': num_authors,
+    }
+
+    # Render the HTML template index.html with the data in the context variable
+    return render(request, 'index.html', context=context)
+// 추가
+
+-튜토리얼 6 뷰페이지 만들기
+html 안에 조건문 쓰는법
+url 에 path 설정법

@@ -1,0 +1,39 @@
+hi hello  edithi hello  edithi hello  edit
+hi hello  edit
+hi hello  edit
+
+
+#파일객체 생성
+
+file = open('fileMake.txt', 'a')
+
+# w 쓰기 # a 추가 # r 읽기
+
+file.write('hi hello  edit\n')
+
+file.close()
+
+
+with open('fileMake.txt', 'r') as file:
+    contents= file.read()
+
+    print(contents)
+
+
+---------------------------------------
+
+import random
+
+han = list('강낭당랑망상방앙장창캉팡탕항')
+
+with open('info.text', 'w', encoding='utf-8') as file:
+
+    for i in range(2100):
+        name = random.choice(han)+random.choice(han)
+        weaighr = random.randrange(55, 100)
+        height = random.randrange(140, 200)
+
+        file.write("{},{},{} \n".format(name, weaighr, height))
+
+print('file created!')
+
